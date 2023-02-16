@@ -32,13 +32,19 @@ export default function App() {
       }
       if (result < 0) {
         result = 0;
-      }
-      
+      } 
       setCalculation(result.toFixed(2));
+      
     }
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
+    const checkTextInput = () => {
+      if (!weight.trim()) {
+        alert('Please enter you weight');
+        return;
+      }
+    }
   return (
     <ScrollView style={Styles.container} contentContainerStyle={Styles.scrollContent}>
     <View style={Styles.Switch}>
@@ -53,7 +59,7 @@ export default function App() {
     <View style={Styles.view}>
       <Text style={Styles.Title}>Alcometer</Text>
       <TextInput style={Styles.input}
-       placeholder='Weight'
+       placeholder='Your weight in kg'
       value={weight}
       maxLength={3}
       onChangeText={setWeight}
@@ -84,7 +90,7 @@ export default function App() {
         </View>
       </RadioButton.Group>
 
-      <Button mode='contained' title='Calculate' onPress={calculate}></Button>
+      <Button mode='contained' title='Calculate' onPress={ () => {calculate(); checkTextInput(); }}></Button>
       <Text>{calculation}</Text>
     </View>
     </ScrollView>

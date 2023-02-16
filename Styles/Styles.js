@@ -4,13 +4,14 @@ import { StyleSheet } from "react-native";
 const Styles = StyleSheet.create({
     container: {
       flex: 1,
-
+      backgroundColor: 'lightgrey'
     },
     Title: {
         fontSize: 30,
         fontFamily: 'ArialMT',
         fontWeight: 'bold',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingBottom: 100
     },
     scrollContent:{
         justifyContent: 'space-evenly',
@@ -26,10 +27,9 @@ const Styles = StyleSheet.create({
       
       radiostyle: {
         flexDirection: 'row',
-        paddingTop: 10,
-        margin: 3,
+        margin: 7,
         backgroundColor: 'grey',
-        borderRadius: 10,
+        borderRadius: 200,
         paddingTop: 10
       },
       RadioText: {
@@ -45,14 +45,24 @@ const Styles = StyleSheet.create({
         margin: 5,
         backgroundColor: '#e0dbdb',
         width: 130,
-        fontSize: 20,
-        borderRadius: 5
+        fontSize: 15,
+        borderColor: 'black',
+        borderBottomWidth: 2
       }, 
       Switch: {
         justifyContent: 'flex-start',
         alignSelf: 'flex-end',
         marginTop: -110,
         marginRight: 50
+      },
+      green: {
+        color: 'green'
+      },
+      yellow: {
+        color: 'yellow'
+      },
+      red: {
+        color: 'red'
       }
 
 });

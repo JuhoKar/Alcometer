@@ -36,24 +36,28 @@ export default function App() {
       setCalculation(result.toFixed(2));
       
     }
-    const [isEnabled, setIsEnabled] = useState(false);
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
+    const toggleSwitch = () =>{
 
+    setIsDarkModeEnabled(previousState => !previousState);
+    }
     const checkTextInput = () => {
       if (!weight.trim()) {
         alert('Please enter you weight');
         return;
       }
     }
+
+    
   return (
-    <ScrollView style={Styles.container} contentContainerStyle={Styles.scrollContent}>
+    <ScrollView style={[Styles.container, isDarkModeEnabled && Styles.darkModeContainer]} contentContainerStyle={Styles.scrollContent}>
     <View style={Styles.Switch}>
       <Switch
       trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+        thumbColor={isDarkModeEnabled ? '#f5dd4b' : '#f4f3f4'}
         ios_backgroundColor="#3e3e3e"
         onValueChange={toggleSwitch}
-        value={isEnabled}>
+        value={isDarkModeEnabled}>
           </Switch>
           </View>
     <View style={Styles.view}>
@@ -91,7 +95,7 @@ export default function App() {
       </RadioButton.Group>
 
       <Button mode='contained' title='Calculate' onPress={ () => {calculate(); checkTextInput(); }}></Button>
-      <Text>{calculation}</Text>
+      <Text style={Styles.Output}>{calculation}</Text>
     </View>
     </ScrollView>
     

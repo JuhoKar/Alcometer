@@ -55,16 +55,15 @@ const Styles = StyleSheet.create({
         marginTop: -110,
         marginRight: 50
       },
-      green: {
-        color: 'green'
+      darkModeContainer: {
+        backgroundColor: "#333",
+        
       },
-      yellow: {
-        color: 'yellow'
-      },
-      red: {
-        color: 'red'
+      Output: {
+        fontSize: 20,
+        fontStyle: 'italic',
+        textAlign: 'center',
       }
-
 });
 
 
